@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ccee66;
+    color: white;
+    padding: 20px 160px;
+    height: 100vh;
+    font-family: "Noto Sans", sans-serif;
+    overflow: hidden;
+    transition: background 0.8s ease;
+}
+
+body::before {
+    content: '';
+    background: #202020;
+    position: absolute;
+    top: 0;
+    left: -600px;
+    transform: rotate(-70deg);
+    width: 100%;
+    height: 120%;
+    transition: transform 1s ease;
+}
+
+body::after {
+    content: 'Nike';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 250px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+body.loaded::after {
+    opacity: 0.5;
+}
+
+.logo {
+    width: 100px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+body.loaded .logo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h4 {
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.botao-carrinho {
+    background: #000000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: rgb(247, 247, 247);
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    display: inline-block; /* Garante que não sobreponha */
+    margin-top: 10px; /* Espaço acima para separar dos botões */
+    margin-left: 500px;
+   
+}
+
+.botao-carrinho:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+
+.imagem-tenis {
+    width: 800px;
+    transform: rotate(-25deg);
+    transition: transform 0.8s ease, opacity 0.5s ease;
+    opacity: 1;
+}
+
+.imagem-tenis.changing {
+    transform: rotate(-25deg) scale(0.95);
+    opacity: 0;
+}
+
+.caixa-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75%;
+    position: relative;
+    z-index: 1;
+}
+
+.caixa-texto {
+    max-width: 500px;
+}
+
+.caixa-botoes {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    gap: 20px;
+    margin-top: 20px; /* Espaço acima para evitar sobreposição */
+}
+
+.botoes {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.botoes:hover {
+    transform: scale(1.1);
+}
+
+.botoes:active {
+    opacity: 0.6;
+}
+
+.verde {
+    background: #ccee66;
+}
+
+.azul {
+    background: #58cced;
+}
+
+.rosa {
+    background: #ff9eb5;
+}
+
+
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    body {
+        padding: 20px; /* Reduz o padding em telas menores */
+        height: auto; /* Permite que o conteúdo se ajuste */
+    }
+
+    h1 {
+        font-size: 40px; /* Reduz o tamanho do título */
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .caixa-principal {
+        flex-direction: column; /* Empilha os elementos verticalmente */
+        height: auto;
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .caixa-texto {
+        max-width: 100%; /* Ocupa toda a largura disponível */
+    }
+
+    .imagem-tenis {
+        width: 100%; /* Ajusta a imagem para caber na tela */
+        max-width: 400px; /* Limita o tamanho máximo */
+        transform: rotate(0deg); /* Remove a rotação em telas pequenas */
+    }
+
+    .caixa-botoes {
+        justify-content: center; /* Centraliza os botões */
+        margin-top: 30px;
+    }
+
+    .botoes {
+        width: 60px; /* Reduz o tamanho dos botões */
+        height: 60px;
+    }
+
+    body::after {
+        font-size: 80px; /* Reduz o tamanho do texto "Nike" de fundo */
+    }
+
+    body::before {
+        left: -280px; /* Ajusta o fundo inclinado */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .botao-carrinho {
+        padding: 8px 16px;
+        font-size: 14px;
+        
+    }
+
+    .botoes {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+}
+
+
+
