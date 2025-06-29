@@ -56,7 +56,7 @@ h4 {
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 50px;
 }
 
 p {
@@ -86,7 +86,7 @@ p {
 
 
 .imagem-tenis {
-    width: 800px;
+    width: 700px;
     transform: rotate(-25deg);
     transition: transform 0.8s ease, opacity 0.5s ease;
     opacity: 1;
